@@ -1,4 +1,3 @@
-
 import numpy as np
 import cv2
 from imutils.object_detection import non_max_suppression
@@ -25,11 +24,12 @@ daniel_face_encoding = face_recognition.face_encodings(daniel_image)[0]
 
 known_faces = [daniel_face_encoding]
 
-#  Initialize some variables
+#Initialize some variables
 face_locations = []
 face_encodings = []
 face_names = []
 
+#initialize some variable to turn off flag arter body has been detected
 badan = True 
 
 
@@ -72,7 +72,7 @@ while(True):
 
 
 
-    # detec human face after system succesfull to detect human body
+    # detect human face after system succesfull to detect human body
     face_locations = face_recognition.face_locations(frame)
     face_encodings = face_recognition.face_encodings(frame, face_locations)
 
@@ -114,8 +114,6 @@ while(True):
         break
 
 cap.release()
-
 out.release()
-
 cv2.destroyAllWindows()
 cv2.waitKey(1)  
